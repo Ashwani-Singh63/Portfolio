@@ -1,20 +1,88 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Project Structure
 
-# Run and deploy your AI Studio app
+This project follows React best practices with a well-organized folder structure.
 
-This contains everything you need to run your app locally.
+## Directory Structure
 
-View your app in AI Studio: https://ai.studio/apps/temp/3
+```
+ashwani-singh---portfolio-2/
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── common/         # Common/shared components
+│   │   │   ├── GlassCard.tsx
+│   │   │   ├── SectionReveal.tsx
+│   │   │   ├── ThemeToggle.tsx
+│   │   │   └── index.ts
+│   │   └── layout/         # Layout components
+│   │       ├── BackgroundBlobs.tsx
+│   │       ├── Footer.tsx
+│   │       ├── Navbar.tsx
+│   │       └── index.ts
+│   ├── sections/           # Page sections/components
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Skills.tsx
+│   │   ├── Timeline.tsx
+│   │   └── index.ts
+│   ├── hooks/              # Custom React hooks
+│   │   ├── useScroll.ts
+│   │   └── useTheme.ts
+│   ├── constants/          # Application constants
+│   │   └── index.ts
+│   ├── types/              # TypeScript type definitions
+│   │   └── index.ts
+│   ├── utils/              # Utility functions (empty, ready for use)
+│   ├── assets/             # Static assets (images, fonts, etc.)
+│   ├── App.tsx             # Main application component
+│   ├── main.tsx            # Application entry point
+│   └── vite-env.d.ts       # Vite type definitions
+├── index.html              # HTML template
+├── vite.config.ts          # Vite configuration
+├── tsconfig.json           # TypeScript configuration
+└── package.json            # Dependencies and scripts
+```
 
-## Run Locally
+## Key Changes Made
 
-**Prerequisites:**  Node.js
+1. **Created `src/` directory**: All source code is now organized under `src/`
+2. **Organized components**: 
+   - Common components (`ThemeToggle`, `GlassCard`, `SectionReveal`) → `src/components/common/`
+   - Layout components (`Navbar`, `Footer`, `BackgroundBlobs`) → `src/components/layout/`
+3. **Created sections folder**: Page sections (`Hero`, `About`, `Skills`, etc.) → `src/sections/`
+4. **Extracted custom hooks**: Theme and scroll logic → `src/hooks/`
+5. **Organized constants and types**: Moved to `src/constants/` and `src/types/`
+6. **Renamed entry point**: `index.tsx` → `src/main.tsx` (React convention)
+7. **Updated configurations**: 
+   - `vite.config.ts`: Updated alias to point to `src/`
+   - `tsconfig.json`: Updated paths and include patterns
+   - `index.html`: Updated script source to `/src/main.tsx`
 
+## Benefits
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- ✅ Better code organization and maintainability
+- ✅ Clear separation of concerns
+- ✅ Easier to scale and add new features
+- ✅ Follows React community best practices
+- ✅ Improved import paths with TypeScript path aliases
+- ✅ Reusable hooks for common functionality
+
+## Import Examples
+
+```typescript
+// Components
+import { ThemeToggle, GlassCard } from '@/components/common';
+import { Navbar, Footer } from '@/components/layout';
+
+// Sections
+import { Hero, About, Skills } from '@/sections';
+
+// Hooks
+import { useTheme } from '@/hooks/useTheme';
+import { useScroll } from '@/hooks/useScroll';
+
+// Constants & Types
+import { PERSONAL_INFO, SKILLS } from '@/constants';
+import { Project, Experience } from '@/types';
+```
