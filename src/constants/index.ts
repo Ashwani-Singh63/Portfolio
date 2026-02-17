@@ -13,11 +13,11 @@ export const PERSONAL_INFO = {
 export const SKILLS: SkillGroup[] = [
   {
     category: "Frontend",
-    skills: ["React.js", "JavaScript", "Tailwind CSS", "HTML", "CSS"]
+    skills: ["React.js", "JavaScript", "Tailwind CSS", "HTML", "CSS", "TypeScript"]
   },
   {
     category: "Programming",
-    skills: ["C", "C++", "JavaScript"]
+    skills: ["C", "C++", "JavaScript", "TypeScript"]
   },
   {
     category: "Tools & Concepts",
@@ -91,7 +91,7 @@ export const EDUCATION = [
   {
     institution: "S.R.V.S. Sikshan Sansthan (CBSE)",
     degree: "Class X",
-    period: "2016–2017",
+    period: "2016–2018",
     description: "Percentage: 85.3%"
   }
 ];

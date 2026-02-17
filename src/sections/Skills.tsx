@@ -39,18 +39,18 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-32 px-6 bg-slate-100/50 dark:bg-slate-900/30 backdrop-blur-sm">
+    <section id="skills" className="py-20 md:py-32 px-6 bg-slate-100/50 dark:bg-slate-900/30 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
         <SectionReveal>
-          <motion.div 
+          <motion.div
             className="text-center mb-24"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-6xl font-black mb-6 tracking-tighter text-slate-900 dark:text-white">My Tech Stack</h2>
-            <motion.div 
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter text-slate-900 dark:text-white">My Tech Stack</h2>
+            <motion.div
               className="flex justify-center gap-2"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
@@ -61,9 +61,9 @@ const Skills: React.FC = () => {
               <div className="w-16 h-2 rounded-full bg-primary-500/20"></div>
             </motion.div>
           </motion.div>
-          
-          <motion.div 
-            className="grid md:grid-cols-3 gap-10"
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -74,20 +74,20 @@ const Skills: React.FC = () => {
                 key={group.category}
                 variants={cardVariants}
               >
-                <GlassCard className="p-10 group hover:-translate-y-4">
+                <GlassCard className="p-6 md:p-10 group hover:-translate-y-4">
                   <div className="mb-8">
                     <h3 className="text-2xl font-black text-slate-900 dark:text-white group-hover:text-primary-500 transition-colors">
                       {group.category}
                     </h3>
                   </div>
-                  <motion.div 
+                  <motion.div
                     className="flex flex-wrap gap-3"
                     variants={containerVariants}
                   >
                     {group.skills.map((skill, skillIndex) => (
-                      <motion.span 
-                        key={skill} 
-                        className="px-5 py-3 bg-slate-50 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 rounded-2xl text-xs font-black uppercase border border-slate-200 dark:border-slate-700 transition-all hover:bg-primary-600 hover:text-white hover:border-primary-600 hover:scale-105 shadow-sm"
+                      <motion.span
+                        key={skill}
+                        className="px-4 py-2 md:px-5 md:py-3 bg-slate-50 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 rounded-2xl text-[10px] md:text-xs font-black uppercase border border-slate-200 dark:border-slate-700 transition-all hover:bg-primary-600 hover:text-white hover:border-primary-600 hover:scale-105 shadow-sm"
                         variants={skillTagVariants}
                         whileHover={{ scale: 1.1, rotate: 2 }}
                         whileTap={{ scale: 0.95 }}
