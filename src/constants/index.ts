@@ -7,7 +7,7 @@ export const PERSONAL_INFO = {
   email: "ashwanisingh638796@gmail.com",
   phone: "+91 6387964069",
   linkedin: "https://www.linkedin.com/in/ashwani-singh-b32a67267",
-  summary: "Front-End Developer with a year of hands-on experience, currently pursuing an fulltime job at 1GEN. Skilled in building responsive, scalable, and user-friendly web applications using HTML, CSS, JavaScript, Tailwind CSS, and React.js. Strong understanding of component-based architecture, state management, API integration, and modern UI/UX patterns.",
+  summary: "Front-End Developer with over a year of hands-on experience, currently working as a full-time Front-End Developer at 1GEN. Skilled in building responsive, scalable, and user-friendly web applications using HTML, CSS, JavaScript, Tailwind CSS, and React.js. Strong understanding of component-based architecture, state management, API integration, and modern UI/UX patterns.",
 };
 
 export const SKILLS: SkillGroup[] = [
@@ -28,8 +28,19 @@ export const SKILLS: SkillGroup[] = [
 export const EXPERIENCES: Experience[] = [
   {
     company: "1GEN",
-    role: "AI Engineer specialised in Front-End Developer ",
-    period: "Jan 2025 - Present",
+    role: "Front-End Developer",
+    period: "Jan 2026 - Present",
+    description: [
+      "Leading the development of new feature modules for the core product suite.",
+      "Optimizing existing codebase for performance and maintainability.",
+      "Collaborating with cross-functional teams to define project requirements and timelines."
+    ],
+    projects: []
+  },
+  {
+    company: "1GEN",
+    role: "Front-End Developer Intern",
+    period: "Jan 2025 - Dec 2025",
     description: [
       "Contributed to the development of scalable front-end systems across multiple internal projects.",
       "Worked closely with the design, product, and backend teams to deliver responsive and optimized UI.",
@@ -80,7 +91,7 @@ export const EDUCATION = [
 ];
 
 export const INTERPERSONAL_SKILLS = [
-  "Time Management", 
+  "Time Management",
   "Adaptability",
   "Critical Thinking",
   "Collaborative Problem-Solving",
