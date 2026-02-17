@@ -87,6 +87,12 @@ export const EDUCATION = [
     degree: "Class XII",
     period: "2018–2020",
     description: "Percentage: 81.6%"
+  },
+  {
+    institution: "S.R.V.S. Sikshan Sansthan (CBSE)",
+    degree: "Class X",
+    period: "2016–2017",
+    description: "Percentage: 85.3%"
   }
 ];
 
