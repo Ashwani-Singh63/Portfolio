@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
         animate="visible"
       >
         <motion.div
-          className="inline-flex items-center gap-2 px-5 py-2 mb-8 rounded-full bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300/50 dark:border-slate-700/50 text-slate-700 dark:text-white font-bold text-[10px] tracking-[0.3em] uppercase"
+          className="inline-flex hidden items-center gap-2 px-5 py-2 mb-8 rounded-full bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300/50 dark:border-slate-700/50 text-slate-700 dark:text-white font-bold text-[10px] tracking-[0.3em] uppercase"
           variants={itemVariants}
         >
           <motion.span
