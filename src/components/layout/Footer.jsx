@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
         </motion.div>
         
         <motion.div 
-          className="flex flex-wrap justify-center gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-slate-300"
+          className="flex flex-wrap justify-center gap-10 text-caption text-slate-300"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
         </motion.div>
         
         <motion.p 
-          className="text-[10px] font-black uppercase tracking-widest text-slate-400"
+          className="text-caption text-slate-400"
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"

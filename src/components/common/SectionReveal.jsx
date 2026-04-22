@@ -1,16 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-interface SectionRevealProps {
-  children: React.ReactNode;
-  delay?: number;
-  direction?: 'up' | 'down' | 'left' | 'right';
-}
-
-const SectionReveal: React.FC<SectionRevealProps> = ({ 
-  children, 
+const SectionReveal = ({
+  children,
   delay = 0,
-  direction = 'up' 
+  direction = 'up'
 }) => {
   const directionVariants = {
     up: { y: 60, x: 0 },

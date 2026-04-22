@@ -5,7 +5,7 @@ import SectionReveal from "../components/common/SectionReveal";
 import { PERSONAL_INFO, INTERPERSONAL_SKILLS } from "../constants";
 import profileImage from "/images/profile.jpg";
 
-const About: React.FC = () => {
+const About = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -62,13 +62,13 @@ const About: React.FC = () => {
                       Background
                     </h2>
                   </div>
-                  <h3 className="text-5xl font-black text-slate-900 dark:text-white">
+                  <h3 className="text-heading-2 text-slate-900 dark:text-white">
                     Engineering Seamless Interfaces
                   </h3>
                 </motion.div>
 
                 <motion.p
-                  className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed font-medium italic border-l-4 border-primary-500 pl-6"
+                  className="text-body-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium italic border-l-4 border-primary-500 pl-6"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}

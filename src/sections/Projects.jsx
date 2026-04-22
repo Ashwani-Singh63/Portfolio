@@ -4,7 +4,7 @@ import GlassCard from '../components/common/GlassCard';
 import SectionReveal from '../components/common/SectionReveal';
 import { EXPERIENCES } from '../constants';
 
-const Projects: React.FC = () => {
+const Projects = () => {
   return (
     <section id="projects" className="py-20 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map(tag => (
-                          <span key={tag} className="px-4 py-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-xl text-[10px] font-black uppercase">
+                          <span key={tag} className="px-4 py-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-xl text-caption font-black uppercase">
                             {tag}
                           </span>
                         ))}

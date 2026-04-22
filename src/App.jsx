@@ -11,7 +11,7 @@ import Footer from './components/layout/Footer';
 import { useTheme } from './hooks/useTheme';
 import { useScroll } from './hooks/useScroll';
 
-const App: React.FC = () => {
+const App = () => {
   const { isDark, toggleTheme } = useTheme();
   const { showScrollTop, scrollToTop } = useScroll();
 

@@ -1,23 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from '../common/ThemeToggle';
 
-interface NavbarProps {
-  isDark: boolean;
-  toggleTheme: () => void;
-}
+// Throttle function for scroll events
+const throttle = (func, limit) => {
+  let inThrottle;
+  return function(...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      requestAnimationFrame(() => inThrottle = false);
+    }
+  };
+};
 
-const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
+const Navbar = memo(({ isDark, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
+  const handleScroll = useCallback(
+    throttle(() => {
       setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
+    }, 16),
+    []
+  );
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initial check
+    handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   const navItems = [
     { name: 'About', href: '#about' },
@@ -26,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
 
   const menuVariants = {
     closed: {
@@ -76,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
           >
             <motion.a 
               href="#" 
-              className="text-2xl font-black text-slate-900 dark:text-white tracking-tighter hover:scale-105 transition-transform"
+              className="text-heading-5 font-black text-slate-900 dark:text-white tracking-tighter hover:scale-105 transition-transform"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -89,7 +103,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="text-xs font-black text-slate-600 dark:text-slate-300 hover:text-primary-500 dark:hover:text-primary-500 transition-colors uppercase tracking-widest relative group"
+                  className="text-body-xs font-black text-slate-600 dark:text-slate-300 hover:text-primary-500 dark:hover:text-primary-500 transition-colors uppercase tracking-widest relative group"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
@@ -104,13 +118,13 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
                   />
                 </motion.a>
               ))}
-              <div className="w-px h-4 bg-slate-200 dark:bg-slate-700"></div>
-              <ThemeToggle isDark={isDark} toggle={toggleTheme} />
+              {/* <div className="w-px h-4 bg-slate-200 dark:bg-slate-700"></div> */}
+              {/* <ThemeToggle isDark={isDark} toggle={toggleTheme} /> */}
             </div>
 
             {/* Mobile Actions */}
             <div className="md:hidden flex items-center gap-4">
-              <ThemeToggle isDark={isDark} toggle={toggleTheme} />
+              {/* <ThemeToggle isDark={isDark} toggle={toggleTheme} /> */}
               <motion.button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-slate-900 dark:text-white p-2 rounded-xl bg-slate-100 dark:bg-slate-800"
@@ -168,6 +182,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
       </AnimatePresence>
     </>
   );
-};
+});
+
+Navbar.displayName = 'Navbar';
 
 export default Navbar;

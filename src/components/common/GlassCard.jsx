@@ -1,12 +1,7 @@
 
 import React from 'react';
 
-interface GlassCardProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-const GlassCard: React.FC<GlassCardProps> = ({ children, className = "" }) => (
+const GlassCard = ({ children, className = "" }) => (
   <div className={`
     backdrop-blur-xl 
     bg-white/80 dark:bg-slate-800/60 

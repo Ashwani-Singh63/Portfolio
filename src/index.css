@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom typography utilities for easy maintenance */
+@layer components {
+  /* Semantic text classes */
+  .text-display {
+    @apply text-7xl font-black tracking-tighter leading-none;
+  }
+
+  .text-heading-1 {
+    @apply text-5xl font-black tracking-tight leading-tight;
+  }
+
+  .text-heading-2 {
+    @apply text-4xl font-black tracking-tight leading-tight;
+  }
+
+  .text-heading-3 {
+    @apply text-3xl font-black tracking-tight leading-tight;
+  }
+
+  .text-heading-4 {
+    @apply text-2xl font-black tracking-tight leading-tight;
+  }
+
+  .text-heading-5 {
+    @apply text-xl font-black tracking-tight leading-tight;
+  }
+
+  .text-heading-6 {
+    @apply text-lg font-black tracking-tight leading-tight;
+  }
+
+  .text-subheading {
+    @apply text-xl font-bold tracking-tight leading-tight;
+  }
+
+  .text-body {
+    @apply text-base font-medium leading-relaxed;
+  }
+
+  .text-body-lg {
+    @apply text-lg font-medium leading-relaxed;
+  }
+
+  .text-body-sm {
+    @apply text-sm font-medium leading-relaxed;
+  }
+
+  .text-body-xs {
+    @apply text-xs font-medium leading-relaxed;
+  }
+
+  .text-caption {
+    @apply text-xs font-black uppercase tracking-widest;
+  }
+
+  .text-caption-sm {
+    @apply text-[0.5625rem] font-black uppercase tracking-widest;
+  }
+
+  /* Hero specific styles */
+  .text-hero-title {
+    @apply text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none;
+  }
+
+  .text-hero-subtitle {
+    @apply text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed;
+  }
+
+  /* Button text */
+  .text-button {
+    @apply text-sm sm:text-base font-black tracking-wide;
+  }
+}
+
+/* Premium Animated Gradient Background */
+
+.bg-mesh-gradient {
+  background: radial-gradient(circle at 20% 20%, #6366f1 0%, transparent 40%),
+              radial-gradient(circle at 80% 30%, #8b5cf6 0%, transparent 40%),
+              radial-gradient(circle at 50% 80%, #3b82f6 0%, transparent 40%);
+  animation: meshMove 12s ease-in-out infinite;
+}
+
+@keyframes meshMove {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}

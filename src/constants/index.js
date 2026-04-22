@@ -1,6 +1,4 @@
 
-import { Project, Experience, SkillGroup } from '../types';
-
 export const PERSONAL_INFO = {
   name: "Ashwani Singh",
   title: "Front-end Developer | React.js",
@@ -10,7 +8,7 @@ export const PERSONAL_INFO = {
   summary: "Front-End Developer with over a year of hands-on experience, currently working as a full-time Front-End Developer at 1GEN. Skilled in building responsive, scalable, and user-friendly web applications using HTML, CSS, JavaScript, Tailwind CSS, and React.js. Strong understanding of component-based architecture, state management, API integration, and modern UI/UX patterns.",
 };
 
-export const SKILLS: SkillGroup[] = [
+export const SKILLS = [
   {
     category: "Frontend",
     skills: ["React.js", "JavaScript", "Tailwind CSS", "HTML", "CSS", "TypeScript"]
@@ -25,7 +23,7 @@ export const SKILLS: SkillGroup[] = [
   }
 ];
 
-export const EXPERIENCES: Experience[] = [
+export const EXPERIENCES = [
   {
     company: "1GEN",
     role: "Front-End Developer",
@@ -46,32 +44,32 @@ export const EXPERIENCES: Experience[] = [
       "Worked closely with the design, product, and backend teams to deliver responsive and optimized UI.",
       "Participated in agile team discussions, requirement analysis, and deployment cycles."
     ],
-    projects: [
-      {
-        id: 1,
-        title: "MDCS (Modular Digital Classroom System)",
-        role: "Frontend Developer (Admin & User Modules)",
-        description: [
-          "Built and optimized Admin-side features including Assessment Management (Create, edit, publish assessments).",
-          "Developed Batch Management, Module Management, and Dynamic Mapping systems.",
-          "On User-side, developed responsive Assessment Quiz system and Pre-assessment questionnaire module.",
-          "Improved UI consistency, optimized render performance, and ensured scalability."
-        ],
-        tags: ["React.js", "State Management", "Admin Dashboard", "UI Optimization"]
-      },
-      {
-        id: 2,
-        title: "1GEN Impact Cloud",
-        role: "Frontend Developer (CMS & Pitch Creation)",
-        description: [
-          "Integrated UI components for content management workflows.",
-          "Developed user-friendly and intuitive interfaces for Pitch creation modules.",
-          "Built content templates and dynamic text fields.",
-          "Enhanced UX by implementing clean layouts, modular components, and reusable UI elements."
-        ],
-        tags: ["CMS", "UX Design", "Modular Components", "Internal Tooling"]
-      }
-    ]
+    // projects: [
+    //   {
+    //     id: 1,
+    //     title: "MDCS (Modular Digital Classroom System)",
+    //     role: "Frontend Developer (Admin & User Modules)",
+    //     description: [
+    //       "Built and optimized Admin-side features including Assessment Management (Create, edit, publish assessments).",
+    //       "Developed Batch Management, Module Management, and Dynamic Mapping systems.",
+    //       "On User-side, developed responsive Assessment Quiz system and Pre-assessment questionnaire module.",
+    //       "Improved UI consistency, optimized render performance, and ensured scalability."
+    //     ],
+    //     tags: ["React.js", "State Management", "Admin Dashboard", "UI Optimization"]
+    //   },
+    //   {
+    //     id: 2,
+    //     title: "1GEN Impact Cloud",
+    //     role: "Frontend Developer (CMS & Pitch Creation)",
+    //     description: [
+    //       "Integrated UI components for content management workflows.",
+    //       "Developed user-friendly and intuitive interfaces for Pitch creation modules.",
+    //       "Built content templates and dynamic text fields.",
+    //       "Enhanced UX by implementing clean layouts, modular components, and reusable UI elements."
+    //     ],
+    //     tags: ["CMS", "UX Design", "Modular Components", "Internal Tooling"]
+    //   }
+    // ]
   }
 ];
 

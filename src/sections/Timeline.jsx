@@ -4,7 +4,7 @@ import GlassCard from '../components/common/GlassCard';
 import SectionReveal from '../components/common/SectionReveal';
 import { EXPERIENCES, EDUCATION } from '../constants';
 
-const Timeline: React.FC = () => {
+const Timeline = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -50,7 +50,7 @@ const Timeline: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-5xl font-black tracking-tighter text-slate-900 dark:text-white">Experience</h2>
+                <h2 className="text-heading-2 text-slate-900 dark:text-white">Experience</h2>
                 <motion.div
                   className="flex-grow h-2 bg-slate-200 dark:bg-slate-800 rounded-full"
                   initial={{ scaleX: 0 }}
@@ -76,9 +76,9 @@ const Timeline: React.FC = () => {
                     <GlassCard className="p-10 border-l-[12px] border-l-primary-600">
                       <div className="mb-6">
                         <div className="flex justify-between items-start flex-wrap gap-4 mb-4">
-                          <h3 className="text-3xl font-black text-slate-900 dark:text-white leading-none">{exp.role}</h3>
+                          <h3 className="text-heading-5 text-slate-900 dark:text-white leading-none">{exp.role}</h3>
                           <motion.span
-                            className="px-4 py-1 bg-primary-600 text-white text-[10px] font-black rounded-full uppercase tracking-tighter"
+                            className="px-4 py-1 bg-primary-600 text-white text-caption font-black rounded-full uppercase tracking-tighter"
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
                             viewport={{ once: true }}
@@ -87,7 +87,7 @@ const Timeline: React.FC = () => {
                             {exp.period}
                           </motion.span>
                         </div>
-                        <p className="text-primary-600 dark:text-primary-400 font-black text-lg">{exp.company}</p>
+                        <p className="text-body-lg text-primary-600 dark:text-primary-400 font-black">{exp.company}</p>
                       </div>
                       <motion.div
                         className="space-y-4"
@@ -96,7 +96,7 @@ const Timeline: React.FC = () => {
                         {exp.description.map((item, i) => (
                           <motion.p
                             key={i}
-                            className="text-slate-600 dark:text-slate-400 text-sm font-medium leading-relaxed pl-6 border-l border-slate-300 dark:border-slate-700"
+                            className="text-body-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed pl-6 border-l border-slate-300 dark:border-slate-700"
                             variants={itemVariants}
                           >
                             {item}
@@ -115,7 +115,7 @@ const Timeline: React.FC = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                       >
                         <motion.h4
-                          className="text-xl font-black text-slate-900 dark:text-white uppercase tracking-wider mb-8"
+                          className="text-body-lg font-black text-slate-900 dark:text-white uppercase tracking-wider mb-8"
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
@@ -137,11 +137,11 @@ const Timeline: React.FC = () => {
                                 <GlassCard className="p-8 hover:border-primary-500/50 transition-all">
                                     <div className="mb-6">
                                       <div className="flex flex-col lg:flex-row items-start justify-between gap-4 mb-3">
-                                        <h5 className="text-2xl font-black text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                                        <h5 className="text-heading-6 text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                                           {project.title}
                                         </h5>
                                         <motion.span
-                                          className="px-3 py-1 bg-primary-600/10 dark:bg-primary-500/20 text-primary-600 dark:text-primary-400 text-[9px] font-black rounded-full uppercase tracking-tighter whitespace-nowrap"
+                                          className="px-3 py-1 bg-primary-600/10 dark:bg-primary-500/20 text-primary-600 dark:text-primary-400 text-caption-sm font-black rounded-full uppercase tracking-tighter whitespace-nowrap"
                                           whileHover={{ scale: 1.1 }}
                                         >
                                           {project.role}
@@ -155,7 +155,7 @@ const Timeline: React.FC = () => {
                                       {project.description.map((item, i) => (
                                         <motion.p
                                           key={i}
-                                          className="text-slate-600 dark:text-slate-300 text-sm font-medium leading-relaxed pl-4 border-l-2 border-slate-200 dark:border-slate-700"
+                                          className="text-body-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed pl-4 border-l-2 border-slate-200 dark:border-slate-700"
                                           variants={itemVariants}
                                         >
                                           {item}
@@ -169,7 +169,7 @@ const Timeline: React.FC = () => {
                                       {project.tags.map((tag) => (
                                         <motion.span
                                           key={tag}
-                                          className="px-3 py-1.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-lg text-[9px] font-black uppercase"
+                                          className="px-3 py-1.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-lg text-caption-sm font-black uppercase"
                                           initial={{ opacity: 0, scale: 0 }}
                                           whileInView={{ opacity: 1, scale: 1 }}
                                           viewport={{ once: true }}
@@ -200,7 +200,7 @@ const Timeline: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-5xl font-black tracking-tighter text-slate-900 dark:text-white">Education</h2>
+                <h2 className="text-heading-2 text-slate-900 dark:text-white">Education</h2>
                 <motion.div
                   className="flex-grow h-2 bg-slate-200 dark:bg-slate-800 rounded-full"
                   initial={{ scaleX: 0 }}
@@ -224,7 +224,7 @@ const Timeline: React.FC = () => {
                   >
                     <GlassCard className="p-10 bg-slate-50/50 dark:bg-slate-800/30 text-slate-900 dark:text-white">
                       <motion.span
-                        className="inline-block px-4 py-1.5 bg-slate-900 dark:bg-slate-200 text-white dark:text-slate-900 text-[10px] font-black rounded-full mb-6 uppercase tracking-[0.2em]"
+                        className="inline-block px-4 py-1.5 bg-slate-900 dark:bg-slate-200 text-white dark:text-slate-900 text-caption font-black rounded-full mb-6 uppercase tracking-[0.2em]"
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 1 }}
                         viewport={{ once: true }}
@@ -232,9 +232,9 @@ const Timeline: React.FC = () => {
                       >
                         {edu.period}
                       </motion.span>
-                      <h3 className="text-2xl font-black mb-2 leading-tight">{edu.institution}</h3>
-                      <p className="text-lg font-bold text-primary-600 dark:text-primary-400 mb-4">{edu.degree}</p>
-                      <p className="text-slate-500 dark:text-slate-400 font-medium text-sm">{edu.description}</p>
+                      <h3 className="text-heading-6 mb-2 leading-tight">{edu.institution}</h3>
+                      <p className="text-body-lg font-bold text-primary-600 dark:text-primary-400 mb-4">{edu.degree}</p>
+                      <p className="text-body-sm text-slate-500 dark:text-slate-400 font-medium">{edu.description}</p>
                     </GlassCard>
                   </motion.div>
                 ))}
