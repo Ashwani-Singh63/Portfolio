@@ -5,7 +5,7 @@ import ThemeToggle from '../common/ThemeToggle';
 // Throttle function for scroll events
 const throttle = (func, limit) => {
   let inThrottle;
-  return function(...args) {
+  return function (...args) {
     if (!inThrottle) {
       func.apply(this, args);
       inThrottle = true;
@@ -72,14 +72,14 @@ const Navbar = memo(({ isDark, toggleTheme }) => {
 
   return (
     <>
-      <motion.nav 
+      <motion.nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.25, 0, 1] }}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <motion.div 
+          <motion.div
             className={`
               flex justify-between items-center px-6 py-3 rounded-2xl transition-all duration-500
               ${scrolled ? 'backdrop-blur-xl bg-white/70 dark:bg-slate-900/70 border border-white/20 dark:border-slate-700/30 shadow-2xl' : 'bg-transparent border-transparent'}
@@ -88,15 +88,15 @@ const Navbar = memo(({ isDark, toggleTheme }) => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <motion.a 
-              href="#" 
+            <motion.a
+              href="#"
               className="text-heading-5 font-black text-slate-900 dark:text-white tracking-tighter hover:scale-105 transition-transform"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               ASHWANI<span className="text-primary-500">.</span>
             </motion.a>
-            
+
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-10">
               {navItems.map((item, index) => (
@@ -110,7 +110,7 @@ const Navbar = memo(({ isDark, toggleTheme }) => {
                   whileHover={{ y: -2 }}
                 >
                   {item.name}
-                  <motion.span 
+                  <motion.span
                     className="absolute -bottom-1 left-0 h-0.5 bg-primary-500"
                     initial={{ width: 0 }}
                     whileHover={{ width: '100%' }}
@@ -118,14 +118,14 @@ const Navbar = memo(({ isDark, toggleTheme }) => {
                   />
                 </motion.a>
               ))}
-              {/* <div className="w-px h-4 bg-slate-200 dark:bg-slate-700"></div> */}
-              {/* <ThemeToggle isDark={isDark} toggle={toggleTheme} /> */}
+              <div className="w-px h-4 bg-slate-200 dark:bg-slate-700"></div>
+              <ThemeToggle isDark={isDark} toggle={toggleTheme} />
             </div>
 
             {/* Mobile Actions */}
             <div className="md:hidden flex items-center gap-4">
-              {/* <ThemeToggle isDark={isDark} toggle={toggleTheme} /> */}
-              <motion.button 
+              <ThemeToggle isDark={isDark} toggle={toggleTheme} />
+              <motion.button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-slate-900 dark:text-white p-2 rounded-xl bg-slate-100 dark:bg-slate-800"
                 aria-label="Toggle menu"
@@ -149,14 +149,14 @@ const Navbar = memo(({ isDark, toggleTheme }) => {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             className="fixed inset-0 z-40 bg-white/90 dark:bg-slate-900/95 backdrop-blur-xl md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <motion.div 
+            <motion.div
               className="flex flex-col items-center justify-center h-full gap-8"
               variants={menuVariants}
               initial="closed"
