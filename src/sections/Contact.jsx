@@ -129,14 +129,14 @@ const Contact = memo(() => {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-blue-600 transition-all flex flex-col items-center gap-4 md:gap-6 flex-1 shadow-lg hover:shadow-blue-500/40 hover:-translate-y-2"
+                className="group p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-primary-600 transition-all flex flex-col items-center gap-4 md:gap-6 flex-1 shadow-lg hover:shadow-primary-500/40 hover:-translate-y-2"
                 variants={itemVariants}
                 whileHover={{ y: -8, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 style={{ willChange: 'transform' }}
               >
                 <motion.div
-                  className="w-20 h-20 rounded-[1.5rem] bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-blue-600 group-hover:bg-white group-hover:scale-110 transition-all"
+                  className="w-20 h-20 rounded-[1.5rem] bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary-600 group-hover:bg-white group-hover:scale-110 transition-all"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                   style={{ willChange: 'transform' }}
