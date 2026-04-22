@@ -241,7 +241,7 @@ const Hero = () => {
           </motion.a>
           <motion.a
             href="#contact"
-            className="px-8 py-4 md:px-12 md:py-6 backdrop-blur-md bg-slate-200/30 dark:bg-slate-800/40 border border-slate-300/50 dark:border-slate-700 font-black rounded-[1.5rem] hover:bg-slate-200/60 dark:hover:bg-slate-700/60 transition-all text-slate-800 dark:text-white w-full sm:w-auto text-button"
+            className="px-8 py-4 md:px-12 md:py-6 backdrop-blur-md bg-slate-200/80 dark:bg-slate-800/40 border-2 border-slate-300 dark:border-slate-700 font-black rounded-[1.5rem] hover:bg-slate-300/90 dark:hover:bg-slate-700/60 transition-all text-slate-900 dark:text-white w-full sm:w-auto text-button shadow-lg hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
