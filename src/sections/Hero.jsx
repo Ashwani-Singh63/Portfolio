@@ -39,7 +39,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen relative overflow-hidden px-6 pt-28 pb-20">
+    <section id="home" className="min-h-screen relative overflow-hidden px-6 pt-28 pb-20 scroll-mt-28">
       <div className="absolute inset-0 bg-mesh-gradient opacity-30 blur-3xl" />
       <div className="absolute inset-0 bg-slate-950/90" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.18),_transparent_22%),radial-gradient(circle_at_bottom_right,_rgba(99,102,241,0.12),_transparent_20%)]" />
@@ -67,6 +67,13 @@ const Hero = () => {
             >
               I build <span className="text-gradient">modern</span> frontend experiences for fast-moving products.
             </motion.h1>
+
+            <motion.p
+              className="text-body-sm text-primary-300 uppercase tracking-[0.35em]"
+              variants={itemVariants}
+            >
+              {PERSONAL_INFO.title}
+            </motion.p>
 
             <motion.p
               className="text-body-lg text-slate-300 max-w-3xl"

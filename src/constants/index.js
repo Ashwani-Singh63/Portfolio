@@ -44,32 +44,31 @@ export const EXPERIENCES = [
       "Worked closely with the design, product, and backend teams to deliver responsive and optimized UI.",
       "Participated in agile team discussions, requirement analysis, and deployment cycles."
     ],
-    // projects: [
-    //   {
-    //     id: 1,
-    //     title: "MDCS (Modular Digital Classroom System)",
-    //     role: "Frontend Developer (Admin & User Modules)",
-    //     description: [
-    //       "Built and optimized Admin-side features including Assessment Management (Create, edit, publish assessments).",
-    //       "Developed Batch Management, Module Management, and Dynamic Mapping systems.",
-    //       "On User-side, developed responsive Assessment Quiz system and Pre-assessment questionnaire module.",
-    //       "Improved UI consistency, optimized render performance, and ensured scalability."
-    //     ],
-    //     tags: ["React.js", "State Management", "Admin Dashboard", "UI Optimization"]
-    //   },
-    //   {
-    //     id: 2,
-    //     title: "1GEN Impact Cloud",
-    //     role: "Frontend Developer (CMS & Pitch Creation)",
-    //     description: [
-    //       "Integrated UI components for content management workflows.",
-    //       "Developed user-friendly and intuitive interfaces for Pitch creation modules.",
-    //       "Built content templates and dynamic text fields.",
-    //       "Enhanced UX by implementing clean layouts, modular components, and reusable UI elements."
-    //     ],
-    //     tags: ["CMS", "UX Design", "Modular Components", "Internal Tooling"]
-    //   }
-    // ]
+  }
+];
+
+export const PROJECTS = [
+  {
+    id: 1,
+    title: "MDCS — Modular Digital Classroom System",
+    role: "Frontend Developer",
+    description: [
+      "Built responsive Admin and User modules for assessments, batch management, and content workflows.",
+      "Created reusable UI components and optimized frontend performance for large classroom datasets.",
+      "Improved UX consistency with polished forms, filters, and state-managed dashboards."
+    ],
+    tags: ["React.js", "Tailwind CSS", "Dashboard", "Reusable Components"]
+  },
+  {
+    id: 2,
+    title: "Impact Cloud CMS & Pitch Builder",
+    role: "Frontend Developer",
+    description: [
+      "Developed modular content templates and pitch creation workflows for internal CMS users.",
+      "Implemented dynamic forms, preview experiences, and responsive layouts for production use.",
+      "Enhanced system reliability by applying consistent component architecture and UI state management."
+    ],
+    tags: ["CMS", "UX Design", "Component Architecture", "Performance"]
   }
 ];
 

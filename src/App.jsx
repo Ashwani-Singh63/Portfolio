@@ -5,6 +5,7 @@ import BackgroundBlobs from './components/layout/BackgroundBlobs';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Skills from './sections/Skills';
+import Projects from './sections/Projects';
 import Timeline from './sections/Timeline';
 import Contact from './sections/Contact';
 import Footer from './components/layout/Footer';
@@ -18,7 +19,7 @@ const App = () => {
   const { showScrollTop, scrollToTop } = useScroll();
 
   return (
-    <div className={`${showPreloader ? 'overflow-hidden bg-slate-950 text-white' : 'bg-slate-200 text-slate-800 dark:bg-slate-950 dark:text-slate-100'} min-h-screen transition-colors duration-300 scroll-smooth selection:bg-primary-500 selection:text-white`}>
+    <div className="overflow-hidden bg-slate-950 text-white min-h-screen transition-colors duration-300 scroll-smooth selection:bg-primary-500 selection:text-white">
       <AnimatePresence mode="wait">
         {showPreloader && <Preloader key="preloader" onFinish={() => setShowPreloader(false)} />}
       </AnimatePresence>
@@ -38,6 +39,7 @@ const App = () => {
             <Hero />
             <About />
             <Skills />
+            {/* <Projects /> */}
             <Timeline />
             <Contact />
           </main>

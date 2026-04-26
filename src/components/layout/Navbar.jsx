@@ -13,6 +13,13 @@ const throttle = (func, limit) => {
   };
 };
 
+const NAV_ITEMS = [
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Contact', href: '#contact' },
+];
+
 const Navbar = memo(() => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,7 +100,7 @@ const Navbar = memo(() => {
             </motion.a>
 
             <div className="hidden md:flex items-center gap-10">
-              {navItems.map((item, index) => (
+              {NAV_ITEMS.map((item, index) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
@@ -116,9 +123,11 @@ const Navbar = memo(() => {
 
             <div className="md:hidden flex items-center gap-4">
               <motion.button
+                type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white p-2 rounded-2xl bg-slate-900/70 border border-white/10 shadow-lg"
-                aria-label="Toggle menu"
+                aria-label="Toggle navigation menu"
+                aria-expanded={isMenuOpen}
                 whileTap={{ scale: 0.95 }}
               >
                 {isMenuOpen ? (
@@ -152,7 +161,7 @@ const Navbar = memo(() => {
               animate="open"
               exit="closed"
             >
-              {navItems.map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <motion.a
                   key={item.name}
                   href={item.href}

@@ -2,7 +2,7 @@
 import React from 'react';
 import GlassCard from '../components/common/GlassCard';
 import SectionReveal from '../components/common/SectionReveal';
-import { EXPERIENCES } from '../constants';
+import { PROJECTS } from '../constants';
 
 const Projects = () => {
   return (
@@ -13,7 +13,7 @@ const Projects = () => {
           <h2 className="text-heading-1 text-center text-slate-900 dark:text-white">Recent Projects</h2>
         </div>
         <div className="space-y-24 md:space-y-32 lg:space-y-48">
-          {EXPERIENCES[0].projects?.map((project, idx) => (
+          {PROJECTS.map((project, idx) => (
             <SectionReveal key={project.id}>
               <div className={`group grid lg:grid-cols-12 gap-12 items-center ${idx % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
                 <div className={`lg:col-span-7 relative ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
