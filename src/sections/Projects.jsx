@@ -7,10 +7,10 @@ import { EXPERIENCES } from '../constants';
 const Projects = () => {
   return (
     <section id="projects" className="py-20 md:py-32 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-16 md:mb-24">
-          <span className="text-primary-600 font-black text-xs uppercase tracking-[0.5em] mb-4">Case Studies</span>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-center tracking-tighter text-slate-900 dark:text-white">Recent Projects</h2>
+          <span className="text-caption text-primary-600 mb-4">Case Studies</span>
+          <h2 className="text-heading-1 text-center text-slate-900 dark:text-white">Recent Projects</h2>
         </div>
         <div className="space-y-24 md:space-y-32 lg:space-y-48">
           {EXPERIENCES[0].projects?.map((project, idx) => (
@@ -29,11 +29,11 @@ const Projects = () => {
                 <div className={`lg:col-span-5 relative z-10 ${idx % 2 === 0 ? 'lg:order-2 lg:-ml-24' : 'lg:order-1 lg:-mr-24'} -mt-12 lg:mt-0`}>
                   <GlassCard className="p-8 md:p-12 lg:p-16 relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-8">
-                      <span className="text-slate-100 dark:text-slate-900 text-6xl md:text-8xl font-black select-none">0{idx + 1}</span>
+                      <span className="text-display text-slate-100 dark:text-slate-900 select-none">0{idx + 1}</span>
                     </div>
                     <div className="relative">
-                      <h3 className="text-2xl md:text-4xl font-black mb-4 group-hover:text-primary-600 transition-colors leading-tight text-slate-900 dark:text-white">{project.title}</h3>
-                      <p className="text-primary-600 dark:text-primary-400 font-black mb-8 uppercase tracking-widest text-xs">{project.role}</p>
+                      <h3 className="text-heading-3 font-medium mb-4 group-hover:text-primary-600 transition-colors leading-tight text-slate-900 dark:text-white">{project.title}</h3>
+                      <p className="text-primary-600 dark:text-primary-400 font-medium mb-8 uppercase tracking-widest text-xs">{project.role}</p>
                       <div className="space-y-4 mb-10">
                         {project.description.map((item, i) => (
                           <p key={i} className="text-slate-600 dark:text-slate-300 font-medium text-sm leading-relaxed">{item}</p>
@@ -41,7 +41,7 @@ const Projects = () => {
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map(tag => (
-                          <span key={tag} className="px-4 py-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-xl text-caption font-black uppercase">
+                          <span key={tag} className="px-4 py-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-xl text-caption font-medium uppercase">
                             {tag}
                           </span>
                         ))}

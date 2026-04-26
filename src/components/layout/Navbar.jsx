@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ThemeToggle from '../common/ThemeToggle';
 
 // Throttle function for scroll events
 const throttle = (func, limit) => {
@@ -14,20 +13,19 @@ const throttle = (func, limit) => {
   };
 };
 
-const Navbar = memo(({ isDark, toggleTheme }) => {
+const Navbar = memo(() => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = useCallback(
     throttle(() => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 30);
     }, 16),
     []
   );
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
-    // Initial check
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -73,63 +71,55 @@ const Navbar = memo(({ isDark, toggleTheme }) => {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-6'}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.25, 0, 1] }}
       >
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.div
-            className={`
-              flex justify-between items-center px-6 py-3 rounded-2xl transition-all duration-500
-              ${scrolled ? 'backdrop-blur-xl bg-white/70 dark:bg-slate-900/70 border border-white/20 dark:border-slate-700/30 shadow-2xl' : 'bg-transparent border-transparent'}
-            `}
-            initial={{ scale: 0.9, opacity: 0 }}
+            className={`flex justify-between items-center px-6 py-3 rounded-full transition-all duration-500 ${scrolled ? 'backdrop-blur-xl bg-slate-950/80 border border-white/10 shadow-2xl' : 'bg-slate-950/20 border border-transparent'}`}
+            initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <motion.a
               href="#"
-              className="text-heading-5 font-black text-slate-900 dark:text-white tracking-tighter hover:scale-105 transition-transform"
-              whileHover={{ scale: 1.1 }}
+              className="text-heading-5 font-medium tracking-[0.22em] text-white uppercase hover:text-primary-400 transition-colors"
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.95 }}
             >
-              ASHWANI<span className="text-primary-500">.</span>
+              ASHWANI<span className="text-primary-400">.</span>
             </motion.a>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-10">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="text-body-xs font-black text-slate-600 dark:text-slate-300 hover:text-primary-500 dark:hover:text-primary-500 transition-colors uppercase tracking-widest relative group"
+                  className="text-body-xs font-medium text-slate-300 hover:text-white transition-colors uppercase tracking-[0.24em] relative group"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.08 }}
                   whileHover={{ y: -2 }}
                 >
                   {item.name}
                   <motion.span
-                    className="absolute -bottom-1 left-0 h-0.5 bg-primary-500"
+                    className="absolute -bottom-1 left-0 h-0.5 bg-primary-400"
                     initial={{ width: 0 }}
                     whileHover={{ width: '100%' }}
                     transition={{ duration: 0.3 }}
                   />
                 </motion.a>
               ))}
-              <div className="w-px h-4 bg-slate-200 dark:bg-slate-700"></div>
-              <ThemeToggle isDark={isDark} toggle={toggleTheme} />
             </div>
 
-            {/* Mobile Actions */}
             <div className="md:hidden flex items-center gap-4">
-              <ThemeToggle isDark={isDark} toggle={toggleTheme} />
               <motion.button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-slate-900 dark:text-white p-2 rounded-xl bg-slate-100 dark:bg-slate-800"
+                className="text-white p-2 rounded-2xl bg-slate-900/70 border border-white/10 shadow-lg"
                 aria-label="Toggle menu"
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {isMenuOpen ? (
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -146,11 +136,10 @@ const Navbar = memo(({ isDark, toggleTheme }) => {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-white/90 dark:bg-slate-900/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-2xl md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -168,7 +157,7 @@ const Navbar = memo(({ isDark, toggleTheme }) => {
                   key={item.name}
                   href={item.href}
                   onClick={closeMenu}
-                  className="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tighter"
+                  className="text-heading-3 font-medium text-white uppercase tracking-[0.25em]"
                   variants={itemVariants}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}

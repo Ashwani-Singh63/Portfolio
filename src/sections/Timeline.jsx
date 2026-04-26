@@ -38,21 +38,21 @@ const Timeline = () => {
   };
 
   return (
-    <section id="experience" className="py-32 px-6 bg-slate-100/50 dark:bg-slate-950/20">
-      <div className="max-w-6xl mx-auto">
+    <section id="experience" className="py-24 px-6 bg-slate-950/90">
+      <div className="max-w-7xl mx-auto">
         <SectionReveal>
-          <div className="flex flex-col gap-20">
-            <div>
+          <div className="space-y-24">
+            <div className="space-y-10">
               <motion.div
-                className="flex items-center gap-4 mb-12"
+                className="flex items-center gap-4 mb-8"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-heading-2 text-slate-900 dark:text-white">Experience</h2>
+                <h2 className="text-heading-2 text-white">Experience</h2>
                 <motion.div
-                  className="flex-grow h-2 bg-slate-200 dark:bg-slate-800 rounded-full"
+                  className="flex-grow h-2 rounded-full bg-white/10"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
@@ -68,141 +68,45 @@ const Timeline = () => {
                 viewport={{ once: true, margin: '-50px' }}
               >
                 {EXPERIENCES.map((exp, idx) => (
-                  <motion.div
-                    key={idx}
-                    className="space-y-8"
-                    variants={itemVariants}
-                  >
-                    <GlassCard className="p-10 border-l-[12px] border-l-primary-600">
-                      <div className="mb-6">
-                        <div className="flex justify-between items-start flex-wrap gap-4 mb-4">
-                          <h3 className="text-heading-5 text-slate-900 dark:text-white leading-none">{exp.role}</h3>
-                          <motion.span
-                            className="px-4 py-1 bg-primary-600 text-white text-caption font-black rounded-full uppercase tracking-tighter"
-                            initial={{ scale: 0 }}
-                            whileInView={{ scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: 0.3 }}
-                          >
-                            {exp.period}
-                          </motion.span>
+                  <motion.div key={idx} variants={itemVariants}>
+                    <GlassCard className="p-10 border border-white/10 bg-slate-900/80 shadow-glass">
+                      <div className="flex flex-col lg:flex-row justify-between gap-6 mb-6">
+                        <div className="space-y-3">
+                          <p className="text-caption uppercase tracking-[0.3em] text-primary-300">{exp.company}</p>
+                          <h3 className="text-heading-5 text-white">{exp.role}</h3>
                         </div>
-                        <p className="text-body-lg text-primary-600 dark:text-primary-400 font-black">{exp.company}</p>
+                        <span className="inline-flex items-center justify-center rounded-full bg-white/10 px-4 py-2 text-caption uppercase tracking-[0.3em] text-primary-200">
+                          {exp.period}
+                        </span>
                       </div>
-                      <motion.div
-                        className="space-y-4"
-                        variants={containerVariants}
-                      >
+                      <div className="space-y-4">
                         {exp.description.map((item, i) => (
                           <motion.p
                             key={i}
-                            className="text-body-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed pl-6 border-l border-slate-300 dark:border-slate-700"
+                            className="text-body-sm text-slate-300 leading-relaxed pl-5 border-l-2 border-primary-500/30"
                             variants={itemVariants}
                           >
                             {item}
                           </motion.p>
                         ))}
-                      </motion.div>
+                      </div>
                     </GlassCard>
-
-                    {/* Projects within Experience */}
-                    {exp.projects && exp.projects.length > 0 && (
-                      <motion.div
-                        className="space-y-12 pl-6 border-l-2 border-primary-500/30 dark:border-primary-500/20"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                      >
-                        <motion.h4
-                          className="text-body-lg font-black text-slate-900 dark:text-white uppercase tracking-wider mb-8"
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5 }}
-                        >
-                          Key Projects
-                        </motion.h4>
-                        <motion.div
-                          className="space-y-8"
-                          variants={containerVariants}
-                        >
-                          {exp.projects.map((project) => (
-                            <SectionReveal key={project.id} delay={0.1}>
-                                <motion.div
-                                className="group"
-                                  variants={projectVariants}
-                                  whileHover={{ x: 10 }}
-                                >
-                                <GlassCard className="p-8 hover:border-primary-500/50 transition-all">
-                                    <div className="mb-6">
-                                      <div className="flex flex-col lg:flex-row items-start justify-between gap-4 mb-3">
-                                        <h5 className="text-heading-6 text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                                          {project.title}
-                                        </h5>
-                                        <motion.span
-                                          className="px-3 py-1 bg-primary-600/10 dark:bg-primary-500/20 text-primary-600 dark:text-primary-400 text-caption-sm font-black rounded-full uppercase tracking-tighter whitespace-nowrap"
-                                          whileHover={{ scale: 1.1 }}
-                                        >
-                                          {project.role}
-                                        </motion.span>
-                                      </div>
-                                    </div>
-                                    <motion.div
-                                    className="space-y-3 mb-6"
-                                      variants={containerVariants}
-                                    >
-                                      {project.description.map((item, i) => (
-                                        <motion.p
-                                          key={i}
-                                          className="text-body-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed pl-4 border-l-2 border-slate-200 dark:border-slate-700"
-                                          variants={itemVariants}
-                                        >
-                                          {item}
-                                        </motion.p>
-                                      ))}
-                                    </motion.div>
-                                    <motion.div
-                                    className="flex flex-wrap gap-2"
-                                      variants={containerVariants}
-                                    >
-                                      {project.tags.map((tag) => (
-                                        <motion.span
-                                          key={tag}
-                                          className="px-3 py-1.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-lg text-caption-sm font-black uppercase"
-                                          initial={{ opacity: 0, scale: 0 }}
-                                          whileInView={{ opacity: 1, scale: 1 }}
-                                          viewport={{ once: true }}
-                                          transition={{ duration: 0.3 }}
-                                          whileHover={{ scale: 1.1, rotate: 2 }}
-                                        >
-                                          {tag}
-                                        </motion.span>
-                                      ))}
-                                    </motion.div>
-                                  </GlassCard>
-                                </motion.div>
-                              </SectionReveal>
-                          ))}
-                        </motion.div>
-                      </motion.div>
-                    )}
                   </motion.div>
                 ))}
               </motion.div>
             </div>
 
-            <div>
+            <div className="space-y-10">
               <motion.div
-                className="flex items-center gap-4 mb-12"
+                className="flex items-center gap-4 mb-8"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-heading-2 text-slate-900 dark:text-white">Education</h2>
+                <h2 className="text-heading-2 text-white">Education</h2>
                 <motion.div
-                  className="flex-grow h-2 bg-slate-200 dark:bg-slate-800 rounded-full"
+                  className="flex-grow h-2 rounded-full bg-white/10"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
@@ -211,30 +115,21 @@ const Timeline = () => {
               </motion.div>
 
               <motion.div
-                className="space-y-10"
+                className="grid gap-6 md:grid-cols-2"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: '-50px' }}
               >
                 {EDUCATION.map((edu, idx) => (
-                  <motion.div
-                    key={idx}
-                    variants={itemVariants}
-                  >
-                    <GlassCard className="p-10 bg-slate-50/50 dark:bg-slate-800/30 text-slate-900 dark:text-white">
-                      <motion.span
-                        className="inline-block px-4 py-1.5 bg-slate-900 dark:bg-slate-200 text-white dark:text-slate-900 text-caption font-black rounded-full mb-6 uppercase tracking-[0.2em]"
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 0.2 }}
-                      >
+                  <motion.div key={idx} variants={itemVariants}>
+                    <GlassCard className="p-8 border border-white/10 bg-slate-900/80 shadow-glass">
+                      <span className="inline-flex px-4 py-2 mb-5 rounded-full bg-primary-500/15 text-primary-200 text-caption uppercase tracking-[0.3em] font-medium">
                         {edu.period}
-                      </motion.span>
-                      <h3 className="text-heading-6 mb-2 leading-tight">{edu.institution}</h3>
-                      <p className="text-body-lg font-bold text-primary-600 dark:text-primary-400 mb-4">{edu.degree}</p>
-                      <p className="text-body-sm text-slate-500 dark:text-slate-400 font-medium">{edu.description}</p>
+                      </span>
+                      <h3 className="text-heading-6 text-white mb-3">{edu.institution}</h3>
+                      <p className="text-body-lg font-medium text-primary-300 mb-3">{edu.degree}</p>
+                      <p className="text-body-sm text-slate-400">{edu.description}</p>
                     </GlassCard>
                   </motion.div>
                 ))}

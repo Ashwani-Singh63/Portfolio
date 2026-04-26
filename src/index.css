@@ -2,39 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #020617;
+  }
+
+  body {
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(99, 102, 241, 0.14), transparent 24%),
+      radial-gradient(circle at 80% 18%, rgba(79, 70, 229, 0.10), transparent 22%),
+      radial-gradient(circle at 50% 92%, rgba(14, 165, 233, 0.08), transparent 18%);
+    background-color: #020617;
+  }
+
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.8);
+    color: white;
+  }
+}
+
 /* Custom typography utilities for easy maintenance */
 @layer components {
   /* Semantic text classes */
   .text-display {
-    @apply text-7xl font-black tracking-tighter leading-none;
+    @apply text-7xl font-medium tracking-tighter leading-none;
   }
 
   .text-heading-1 {
-    @apply text-5xl font-black tracking-tight leading-tight;
+    @apply text-5xl font-medium tracking-tight leading-tight;
   }
 
   .text-heading-2 {
-    @apply text-4xl font-black tracking-tight leading-tight;
+    @apply text-4xl font-medium tracking-tight leading-tight;
   }
 
   .text-heading-3 {
-    @apply text-3xl font-black tracking-tight leading-tight;
+    @apply text-3xl font-medium tracking-tight leading-tight;
   }
 
   .text-heading-4 {
-    @apply text-2xl font-black tracking-tight leading-tight;
+    @apply text-2xl font-medium tracking-tight leading-tight;
   }
 
   .text-heading-5 {
-    @apply text-xl font-black tracking-tight leading-tight;
+    @apply text-xl font-medium tracking-tight leading-tight;
   }
 
   .text-heading-6 {
-    @apply text-lg font-black tracking-tight leading-tight;
+    @apply text-lg font-medium tracking-tight leading-tight;
   }
 
   .text-subheading {
-    @apply text-xl font-bold tracking-tight leading-tight;
+    @apply text-xl font-medium tracking-tight leading-tight;
   }
 
   .text-body {
@@ -54,25 +75,41 @@
   }
 
   .text-caption {
-    @apply text-xs font-black uppercase tracking-widest;
+    @apply text-xs font-medium uppercase tracking-widest;
   }
 
   .text-caption-sm {
-    @apply text-[0.5625rem] font-black uppercase tracking-widest;
+    @apply text-[0.5625rem] font-medium uppercase tracking-widest;
   }
 
   /* Hero specific styles */
   .text-hero-title {
-    @apply text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none;
+    @apply text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter leading-none;
   }
 
   .text-hero-subtitle {
-    @apply text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed;
+    @apply text-lg sm:text-xl md:text-2xl font-medium leading-relaxed;
   }
 
   /* Button text */
   .text-button {
-    @apply text-sm sm:text-base font-black tracking-wide;
+    @apply text-sm sm:text-base font-medium tracking-wide;
+  }
+}
+
+@layer utilities {
+  .shadow-glass {
+    box-shadow: 0 35px 90px rgba(15, 23, 42, 0.18);
+  }
+
+  .shadow-glass-dark {
+    box-shadow: 0 35px 90px rgba(15, 23, 42, 0.55);
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #8b5cf6, #6366f1, #06b6d4);
+    -webkit-background-clip: text;
+    color: transparent;
   }
 }
 
